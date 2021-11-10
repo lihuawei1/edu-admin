@@ -103,7 +103,8 @@
         <div v-show="activeStep == 4">
           <el-form-item>
             <el-form-item label="课程详情" label-width="70px">
-              <el-input type="textarea"></el-input>
+              <!-- <el-input type="textarea"></el-input> -->
+              <text-editor v-model="course.wanginner"></text-editor>
             </el-form-item>
             <el-button type="primary">保存</el-button>
           </el-form-item>
@@ -120,8 +121,9 @@
 import Vue from "vue";
 import { saveOrUpdateCourse,uploadCourseImage } from '@/services/courses'
 import CourseImage from "./components/CourseImage.vue";
+import TextEditor from "@/components/TextEditor/index.vue"
 export default Vue.extend({
-  components: { CourseImage },
+  components: { CourseImage,TextEditor},
   name: "CourseCreate",
   data() {
     return {
@@ -148,7 +150,8 @@ export default Vue.extend({
               description: ''
           },
           courseListImg: '',
-          courseImgUrl: ''
+          courseImgUrl: '',
+          wanginner: 'hell122o'
       }
     };
   },
